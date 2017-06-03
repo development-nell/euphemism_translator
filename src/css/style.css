@@ -1,0 +1,19 @@
+.uneuphemized {
+	cursor:pointer;
+	text-decoration: inherit;
+	font-weight:inherit;
+	color: inherit;
+	font-weight: inherit;
+}
+
+div.ue-form-row label, div.ue-form-row input {
+	font-size: 16px;
+
+    margin-right: 16px;
+    margin-left: 16px;
+	width:45%;
+	display:inline-block !important;
+}
+
+
+	
