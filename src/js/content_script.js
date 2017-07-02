@@ -2,7 +2,7 @@ var translation_map = {
 	'bitcoin(?:s)?':'failbux',
 	'node.js':'bad-ass rock star tech',
 	'work(?:[/-])life balance':'we are actually going to work you to death',
-	'rockstar developer(?:s)?':"someone who pretends they're not a total nerd'
+	'rockstar developer(?:s)?':'Someone we are going to work to death'
 };
 
 var trans_compiled = {};
@@ -26,7 +26,6 @@ function walk(node) {
 
 	// I stole this function from here:
 	// http://is.gd/mwZp7E
-	
 
 	if (node.nodeName.match(/(script|style)/i)) {
 		return;
