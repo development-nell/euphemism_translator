@@ -27,7 +27,7 @@ function walk(node) {
 	// I stole this function from here:
 	// http://is.gd/mwZp7E
 
-	if (node.nodeName.match(/(script|style)/i)) {
+	if (node.nodeName.match(/(script|style|form|input|textarea|select)/i)) {
 		return;
 	}
 
@@ -169,7 +169,7 @@ function new_translation(text) {
 					ue_recompile();
 					walk(document.body);
 					ue_save(translation_map);
-					$(this).dialog("close");
+					$(this).dialog("close");	
 				}
 			},
 			{text:"Cancel",click:function() {$(this).dialog("close")}}
