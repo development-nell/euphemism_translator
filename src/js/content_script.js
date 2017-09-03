@@ -2,7 +2,8 @@ var translation_map = {
 	'bitcoin(?:s)?':'failbux',
 	'node.js':'bad-ass rock star tech',
 	'work(?:[/-])life balance':'we are actually going to work you to death',
-	'rockstar developer(?:s)?':'Someone we are going to work to death'
+	'rockstar developer(?:s)?':'Someone we are going to work to death',
+	"Devil's advocate":'Turkey Fucker',
 };
 
 var trans_compiled = {};
@@ -149,7 +150,10 @@ chrome.extension.onMessage.addListener(function(message) {
 	switch(message.info.menuItemId) {
 		case "ue-new":
 			new_translation(message.info.selectionText);
-			break;
+		break;
+		case "ue-bofa":
+			walk(document.body);
+		break;
     }
 });
 
@@ -166,7 +170,8 @@ function new_translation(text) {
 					var new_pattern = document.getElementById("ue-pattern").value;
                     var new_text = document.getElementById("ue-value").value;
 					translation_map[new_pattern] = new_text;
-					ue_recompile();
+					translate_re = ue_recompile();
+
 					walk(document.body);
 					ue_save(translation_map);
 					$(this).dialog("close");	
@@ -192,7 +197,7 @@ function update_translation(event) {
 					var new_pattern = document.getElementById("ue-pattern").value;
 					var new_text = document.getElementById("ue-value").value;
 					if (new_pattern!=key) {
-						delete translation[key];
+						delete translation_map[key];
 					}
 					translation_map[new_pattern] = new_text;
 					
